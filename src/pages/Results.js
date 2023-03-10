@@ -21,7 +21,7 @@ const Results = () => {
 
   return (
     <div>
-      <h1>Results</h1>
+      <h1>Company results</h1>
 
       <table className="table table-striped">
         <thead>
@@ -46,6 +46,16 @@ const Results = () => {
             <td>{el.paid.debt}</td>
           </tr>
         )}
+        <tr>
+          <td colSpan="2"><b>All services</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+
         </tbody>
       </table>
 
