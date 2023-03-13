@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React, {useState} from 'react';
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
 function CreateNewJob(props) {
   const [modal, setModal] = useState(false);
 
-  const[job, setJob] = useState('');
-  const[price, setPrice] = useState('');
-  const[primeCost, setPrimeCost] = useState('');
-  const[employee, setEmployee] = useState('');
+  const [job, setJob] = useState('');
+  const [price, setPrice] = useState('');
+  const [primeCost, setPrimeCost] = useState('');
+  const [employee, setEmployee] = useState('');
 
   const addJobButtonHandler = () => {
     const newJob = {
@@ -29,9 +29,9 @@ function CreateNewJob(props) {
   return (
     <div>
       <Button color="outline-primary" onClick={toggle}>
-       Create New Job
+        Create New Job
       </Button>
-      <Modal isOpen={modal} toggle={toggle} >
+      <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Create new job</ModalHeader>
         <ModalBody>
           <div className="input-group mb-3">
@@ -42,7 +42,7 @@ function CreateNewJob(props) {
                    aria-describedby="inputGroup-sizing-default"
                    placeholder="job"
                    value={job}
-                   onChange={e=>setJob(e.target.value)}
+                   onChange={e => setJob(e.target.value)}
             />
           </div>
 
@@ -54,7 +54,7 @@ function CreateNewJob(props) {
                    aria-describedby="inputGroup-sizing-default"
                    placeholder="price"
                    value={price}
-                   onChange={e=>setPrice(e.target.value)}
+                   onChange={e => setPrice(e.target.value)}
             />
           </div>
 
@@ -66,7 +66,7 @@ function CreateNewJob(props) {
                    aria-describedby="inputGroup-sizing-default"
                    placeholder="prime cost"
                    value={primeCost}
-                   onChange={e=>setPrimeCost(e.target.value)}
+                   onChange={e => setPrimeCost(e.target.value)}
             />
           </div>
 
@@ -78,7 +78,7 @@ function CreateNewJob(props) {
                    aria-describedby="inputGroup-sizing-default"
                    placeholder="employee"
                    value={employee}
-                   onChange={e=>setEmployee(e.target.value)}
+                   onChange={e => setEmployee(e.target.value)}
             />
           </div>
 

@@ -5,6 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Results = () => {
   const [orders, setOrders] = useState([]);
   console.log(orders)
+const[netProfit, setNetProfit] = useState(0);
+const[income, setIncome] = useState(0);
+const[primeCost, setPrimeCost] = useState(0);
+const[paidSum, setPaidSum] = useState(0);
+const[clientDebt, setClientDebt] = useState(0);
 
   const getOrders = () => {
     axios.get('https://expressjs-server.vercel.app/orders')
@@ -15,9 +20,49 @@ const Results = () => {
         console.log(error)
       })
   }
+  const totalNetProfit = () => {
+    let total = 0;
+    orders.map(el=> (
+      total += el.paid.payment+el.paid.debt-el.service.primeCost
+    ))
+    setNetProfit(total);
+  }
+  const totalIncome = () => {
+    let total = 0;
+    orders.map(el=> (
+      total += el.paid.payment+el.paid.debt)
+    )
+    setIncome(total);
+  }
+  const totalPrimeCost = () => {
+    let total = 0;
+    orders.map(el=> (
+      total += el.service.primeCost)
+    )
+    setPrimeCost(total);
+  }
+  const totalPaidSum = () => {
+    let total = 0;
+    orders.map(el=> (
+      total += el.paid.payment)
+    )
+    setPaidSum(total);
+  }
+  const totalClientDebt = () => {
+    let total = 0;
+    orders.map(el=> (
+      total += el.paid.debt)
+    )
+    setClientDebt(total);
+  }
   useEffect(() => {
     getOrders();
-  }, [])
+    totalNetProfit();
+    totalIncome();
+    totalPrimeCost();
+    totalPaidSum();
+    totalClientDebt();
+  }, )
 
   return (
     <div>
@@ -48,13 +93,12 @@ const Results = () => {
         )}
         <tr>
           <td colSpan="2"><b>All services</b></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><b>{netProfit}</b></td>
+          <td><b>{income}</b></td>
+          <td><b>{primeCost}</b></td>
+          <td><b>{paidSum}</b></td>
+          <td><b>{clientDebt}</b></td>
         </tr>
-
 
         </tbody>
       </table>

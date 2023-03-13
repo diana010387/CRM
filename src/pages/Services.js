@@ -7,6 +7,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import DeleteModal from "../services/DeleteModal";
 import UpdateModal from "../services/UpdateModal";
 
+
+
 const Services = (props) => {
 
   const [services, setServices] = useState([]);
@@ -56,6 +58,7 @@ const Services = (props) => {
   return (
     <div>
 
+      <h1>Job</h1>
       <div className="input-group mb-3">
         <input
           type="text"
@@ -67,11 +70,9 @@ const Services = (props) => {
         <div className="input-group-append">
           <CreateNewJob
             createNewJob={createNewJob}
-            // services={services}
           />
         </div>
       </div>
-      <h1>Job</h1>
 
       <table className="table table-striped">
         <thead>
@@ -98,7 +99,7 @@ const Services = (props) => {
               <Dropdown.Item href="#">
                 <UpdateModal
                   updateJob={updateJob}
-                  services={el}
+                  service={el}
                 />
               </Dropdown.Item>
               <Dropdown.Item href="#">
