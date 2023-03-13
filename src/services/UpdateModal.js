@@ -3,6 +3,8 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 function UpdateJobModal(props) {
   const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
+
   const[job, setJob] = useState(props.service.job);
   const[price, setPrice] = useState(props.service.price);
   const[primeCost, setPrimeCost] = useState(props.service.primeCost);
@@ -10,11 +12,10 @@ function UpdateJobModal(props) {
 
   const onSave = () => {
     const newJob = {job, price, primeCost, employee}
-    props.updateJob(props.services._id, newJob);
+    props.updateJob(props.service._id, newJob);
     toggle();
   }
 
-  const toggle = () => setModal(!modal);
 
   return (
     <div>

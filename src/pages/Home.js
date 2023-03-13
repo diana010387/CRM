@@ -4,7 +4,7 @@ import {Audio, Bars, BallTriangle, Radio, Blocks, Circles, ColorRing, FallingLin
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Home page</h1>
       <Audio/>
       <p>Happy to introduce you our App - CRM to count your clients, services and your profit.</p>
       <p>If you need help, please, let us know by email or phone call.</p>

@@ -98,14 +98,15 @@ const Services = (props) => {
             >
               <Dropdown.Item href="#">
                 <UpdateModal
-                  updateJob={updateJob}
                   service={el}
+                  updateJob={updateJob}
+                  // services={services}
                 />
               </Dropdown.Item>
               <Dropdown.Item href="#">
                 <DeleteModal
-                  deleteJob={deleteJob}
                   services={el}
+                  deleteJob={deleteJob}
                 />
               </Dropdown.Item>
             </DropdownButton>
